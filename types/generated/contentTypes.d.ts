@@ -401,6 +401,7 @@ export interface ApiCompanyCompany extends Struct.CollectionTypeSchema {
 export interface ApiJobJob extends Struct.CollectionTypeSchema {
   collectionName: 'jobs';
   info: {
+    description: '';
     displayName: 'Job';
     pluralName: 'jobs';
     singularName: 'job';
@@ -409,7 +410,7 @@ export interface ApiJobJob extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    company: Schema.Attribute.Relation<'oneToOne', 'api::company.company'>;
+    company: Schema.Attribute.Integer;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
